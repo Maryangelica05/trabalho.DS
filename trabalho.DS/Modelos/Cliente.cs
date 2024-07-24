@@ -2,7 +2,7 @@ namespace Modelos;
 {
 
 
-public class Cliente
+public class Cliente:Registro
 {
     string nome;
     string cnpj;
