@@ -1,6 +1,6 @@
 ﻿namespace trabalho.DS;
 
-public partial class MainPage : ContentPage
+public partial class MainPage : 
 {
 	int count = 0;
 

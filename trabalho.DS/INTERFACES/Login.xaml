@@ -1,0 +1,53 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="trabalho.DS.Login"
+             BackgroundColor="MediumSeaGreen">
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        
+        <Label Text="LOGIN"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+        
+        <Entry Placeholder="CPF/CNPJ"
+               x:Name="CpfCnpjEntry"
+               Keyboard="Numeric"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+        
+        <Entry Placeholder="SENHA"
+               x:Name="SenhaEntry"
+               IsPassword="True"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+        
+        <Button Text="LOGAR"
+                x:Name="LoginButton"
+                BackgroundColor="LightGreen"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="OnLoginButtonClicked"/>
+        
+        <Button Text="NÃO POSSUO CADASTRO"
+                x:Name="NoCadastroButton"
+                BackgroundColor="LightGreen"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="OnNoCadastroButtonClicked"/>
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button Text="⟵"
+                    x:Name="BackButton"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="OnBackButtonClicked"/>
+            <Button Text="⟶"
+                    x:Name="ForwardButton"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="OnForwardButtonClicked"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
