@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="trabalho.DS.Menu"
+             BackgroundColor="#00A36C">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        
+        <Image Source="your_image.png" HeightRequest="150" WidthRequest="150" />
+
+        <Label Text="OLHAND DE PERTO, GERINDO DE LONGE"
+               FontSize="24"
+               FontAttributes="Italic"
+               TextColor="White"
+               HorizontalTextAlignment="Center"
+               Margin="0,20,0,20"/>
+
+        <Button Text="GERENCIAMENTO DE FORNECEDOR"
+                BackgroundColor="#8FBC8F"
+                TextColor="Black"
+                FontAttributes="Bold"
+                Margin="0,10,0,10"/>
+
+        <Button Text="GERENCIAMENTO DE MATERIAIS"
+                BackgroundColor="#8FBC8F"
+                TextColor="Black"
+                FontAttributes="Bold"
+                Margin="0,10,0,10"/>
+
+        <Button Text="GERENCIAMENTO DE ESTOQUE"
+                BackgroundColor="#8FBC8F"
+                TextColor="Black"
+                FontAttributes="Bold"
+                Margin="0,10,0,10"/>
+
+        <Button Text="GERENCIAMENTO DE GASTO"
+                BackgroundColor="#8FBC8F"
+                TextColor="Black"
+                FontAttributes="Bold"
+                Margin="0,10,0,10"/>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
+            <Button Text="←"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    FontSize="24"
+                    FontAttributes="Bold"/>
+            
+            <Button Text="→"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    FontSize="24"
+                    FontAttributes="Bold"/>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

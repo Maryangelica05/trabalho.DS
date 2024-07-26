@@ -1,6 +1,6 @@
 
 
-namespace trabalho.DS.Login
+namespace trabalho.DS
 {
     public partial class Cadastro : ContentPage
     {
