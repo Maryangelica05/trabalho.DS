@@ -1,7 +1,9 @@
 using Microsoft.Maui.Controls;
 
-namespace Trabalho.DS
+namespace trabalho.DS
 {
+
+
     public partial class Menu : ContentPage
     {
         public Menu()

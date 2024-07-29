@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Maui.Controls;
 
-namespace trabalho.DS.MainPage
+namespace trabalho.DS
 {
     public partial class Lupa : ContentPage
     {
