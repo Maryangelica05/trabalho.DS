@@ -3,51 +3,58 @@
              x:Class="trabalho.DS.Login"
              BackgroundColor="MediumSeaGreen">
 
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        
-        <Label Text="LOGIN"
-               FontSize="Large"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
-        
-        <Entry Placeholder="CPF/CNPJ"
-               x:Name="CpfCnpjEntry"
-               Keyboard="Numeric"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
-        
-        <Entry Placeholder="SENHA"
-               x:Name="SenhaEntry"
-               IsPassword="True"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
-        
-        <Button Text="LOGAR"
-                x:Name="LoginButton"
-                BackgroundColor="LightGreen"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Clicked="OnLoginButtonClicked"/>
-        
-        <Button Text="NÃO POSSUO CADASTRO"
-                x:Name="NoCadastroButton"
-                BackgroundColor="LightGreen"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Clicked="OnNoCadastroButtonClicked"/>
-        
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Button Text="⟵"
-                    x:Name="BackButton"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Clicked="OnBackButtonClicked"/>
-            <Button Text="⟶"
-                    x:Name="ForwardButton"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Clicked="OnForwardButtonClicked"/>
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- StackLayout para o cabeçalho e campos de entrada -->
+        <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,50,0,0" Spacing="20">
+            <Label Text="LOGIN"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Start"/>
+            
+            <Entry Placeholder="CPF/CNPJ"
+                   x:Name="CpfCnpj"
+                   Keyboard="Numeric"
+                   HorizontalOptions="FillAndExpand"/>
+            
+            <Entry Placeholder="SENHA"
+                   x:Name="Senha"
+                   IsPassword="True"
+                   HorizontalOptions="FillAndExpand"/>
         </StackLayout>
-    </StackLayout>
+
+        <!-- StackLayout para os botões de login e cadastro -->
+        <StackLayout Grid.Row="1" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="20">
+            <Button Text="LOGAR"
+                    x:Name="LoginButton"
+                    BackgroundColor="LightGreen"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="OnLoginButtonClicked"/>
+            
+            <Button Text="NÃO POSSUO CADASTRO"
+                    x:Name="NoCadastroButton"
+                    BackgroundColor="LightGreen"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="OnNoCadastroButtonClicked"/>
+
+            <!-- StackLayout para os botões de navegação -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,30,0,0" Spacing="50">
+                <Button Text="⟵"
+                        x:Name="BackButton"
+                        HorizontalOptions="Center"
+                        Clicked="OnBackButtonClicked"/>
+                <Button Text="⟶"
+                        x:Name="ForwardButton"
+                        HorizontalOptions="Center"
+                        Clicked="OnForwardButtonClicked"/>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
 </ContentPage>

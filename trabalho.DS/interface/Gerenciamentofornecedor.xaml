@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="trabalho.DS.Gerenciamentofornecedor">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <!-- Header -->
+            <Label Text="Gerenciamento de Fornecedor" 
+                   FontSize="Large" 
+                   HorizontalOptions="Center" />
+
+            <!-- Nome e CNPJ -->
+            <Entry x:Name="nomeEntry" Placeholder="Nome" />
+            <Entry x:Name="cnpjEntry" Placeholder="CNPJ" />
+
+            <!-- Materiais Primas -->
+            <Picker x:Name="materiaisPrimasPicker" Title="Materiais Primas">
+                <!-- Items can be added here -->
+            </Picker>
+
+            <!-- Buttons for actions -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Desativar" Clicked="OnDesativarClicked" />
+                <Button Text="Editar" Clicked="OnEditarClicked" />
+            </StackLayout>
+
+            <!-- Confirmation area -->
+            <StackLayout x:Name="confirmationArea" IsVisible="False">
+                <Label Text="Deseja realmente desativar fornecedor?"
+                       HorizontalOptions="Center" 
+                       FontSize="Medium" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="✖" Clicked="OnCancelClicked" />
+                    <Button Text="✔" Clicked="OnConfirmClicked" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
