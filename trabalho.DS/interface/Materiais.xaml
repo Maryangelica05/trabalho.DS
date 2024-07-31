@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="trabalho.DS.Materiais"
+             BackgroundColor="MediumSeaGreen">
+
+    <Grid Padding="20">
+        <!-- Definição das linhas e colunas da Grid -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Header com Menu e Título -->
+        <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Center" Orientation="Horizontal" Margin="0,10,0,10">
+            <Label Text="gerenciamento de materiais"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <Button Text="☰"
+                    x:Name="MenuButton"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Clicked="OnMenuButtonClicked"/>
+        </StackLayout>
+
+        <!-- Comboboxes (Picker) e Botões de Navegação -->
+        <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="10">
+            <Picker Title="ATIVO:"
+                    x:Name="AtivoPicker"
+                    HorizontalOptions="FillAndExpand"/>
+            <Picker Title="FORNECEDOR:"
+                    x:Name="FornecedorPicker"
+                    HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+
+        <!-- Lista de Materiais Disponíveis -->
+        <StackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="10">
+            <Label Text="MATERIAIS DISPONÍVEIS:"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Start"/>
+            <!-- Placeholder para a lista de materiais -->
+            <ListView x:Name="MateriaisListView" HorizontalOptions="FillAndExpand">
+                <!-- Definição de itens para exibição -->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Label Text="{Binding Nome}" HorizontalOptions="FillAndExpand"/>
+                                <Button Text="👁"
+                                        Command="{Binding ViewCommand}"
+                                        HorizontalOptions="Center"/>
+                                <Button Text="🗑"
+                                        Command="{Binding DeleteCommand}"
+                                        HorizontalOptions="Center"/>
+                                <Button Text="✎"
+                                        Command="{Binding EditCommand}"
+                                        HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+        <!-- Botão de voltar à esquerda -->
+        <Button Grid.Row="2" Grid.Column="0"
+                Text="⟵"
+                x:Name="BackButton"
+                HorizontalOptions="Start"
+                VerticalOptions="End"
+                Clicked="OnBackButtonClicked"/>
+
+        <!-- Botão de avançar à direita -->
+        <Button Grid.Row="2" Grid.Column="2"
+                Text="⟶"
+                x:Name="ForwardButton"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Clicked="OnForwardButtonClicked"/>
+    </Grid>
+</ContentPage>

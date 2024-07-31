@@ -6,7 +6,7 @@
 
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         
-        <Image Source="your_image.png" HeightRequest="150" WidthRequest="150" />
+        <Image Source="menu.png" HeightRequest="150" WidthRequest="150" />
 
         <Label Text="OLHAND DE PERTO, GERINDO DE LONGE"
                FontSize="24"
