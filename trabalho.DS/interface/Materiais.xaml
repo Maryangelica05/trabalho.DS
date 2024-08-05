@@ -25,7 +25,7 @@
                    HorizontalOptions="Center"/>
             <Button Text="☰"
                     x:Name="MenuButton"
-                    HorizontalOptions="End"
+                    HorizontalOptions="Start"
                     VerticalOptions="Center"
                     Clicked="OnMenuButtonClicked"/>
         </StackLayout>
@@ -54,15 +54,25 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Spacing="10">
                                 <Label Text="{Binding Nome}" HorizontalOptions="FillAndExpand"/>
-                                <Button Text="👁"
-                                        Command="{Binding ViewCommand}"
-                                        HorizontalOptions="Center"/>
-                                <Button Text="🗑"
-                                        Command="{Binding DeleteCommand}"
-                                        HorizontalOptions="Center"/>
-                                <Button Text="✎"
-                                        Command="{Binding EditCommand}"
-                                        HorizontalOptions="Center"/>
+                               <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                           <Button ImageSource="visualizar.png"
+            Command="{Binding ViewCommand}"
+            HorizontalOptions="Center"
+            WidthRequest="40"
+            HeightRequest="40"/>
+    <Button ImageSource="lixeira.png"
+            Command="{Binding DeleteCommand}"
+            HorizontalOptions="Center"
+          
+            WidthRequest="40"
+            HeightRequest="40"/>
+    <Button ImageSource="editar.png"
+            Command="{Binding EditCommand}"
+            HorizontalOptions="Center"
+            WidthRequest="40"
+            HeightRequest="40"/>
+</StackLayout>
+
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
@@ -71,8 +81,8 @@
         </StackLayout>
 
         <!-- Botão de voltar à esquerda -->
-        <Button Grid.Row="2" Grid.Column="0"
-                Text="⟵"
+        <Button ImageSource=" voltar.png"
+         Grid.Row="2" Grid.Column="0"
                 x:Name="BackButton"
                 HorizontalOptions="Start"
                 VerticalOptions="End"

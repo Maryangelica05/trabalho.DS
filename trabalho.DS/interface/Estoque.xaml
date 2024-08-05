@@ -29,7 +29,7 @@
             <Picker Title="FORNECEDOR:"
                     x:Name="FornecedorPicker"
                     HorizontalOptions="FillAndExpand"/>
-            <Button Text="🗑"
+            <Button ImageSource="lixeira.png"
                     Command="{Binding ExcluirCommand}"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"/>
@@ -51,11 +51,11 @@
                        HorizontalOptions="Center"/>
 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="50">
-                    <Button Text="❌"
+                    <Button ImageSource="cancelar.png"
                             x:Name="CancelButton"
                             HorizontalOptions="Center"
                             Clicked="OnCancelButtonClicked"/>
-                    <Button Text="✅"
+                    <Button  ImageSource= "confirmar.png"
                             x:Name="ConfirmButton"
                             HorizontalOptions="Center"
                             Clicked="OnConfirmButtonClicked"/>

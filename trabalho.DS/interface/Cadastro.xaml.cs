@@ -1,5 +1,8 @@
 
 
+using Microsoft.Maui.Controls;
+using System;
+
 namespace trabalho.DS
 {
     public partial class Cadastro : ContentPage
@@ -9,19 +12,25 @@ namespace trabalho.DS
             InitializeComponent();
         }
 
-        private void OnFinalizarCadastroButtonClicked(object sender, EventArgs e)
+        private async void OnFinalizarCadastroClicked(object sender, EventArgs e)
         {
-            // Lógica para finalizar o cadastro
-        }
+            string nome = NomeEntry.Text;
+            string cpfCnpj = CpfCnpjEntry.Text;
+            string senha = SenhaEntry.Text;
+            string confirmaSenha = ConfirmaSenhaEntry.Text;
 
-        private void OnBackButtonClicked(object sender, EventArgs e)
-        {
-            // Lógica para o botão de voltar
-        }
+            if (senha != confirmaSenha)
+            {
+                await DisplayAlert("Erro", "As senhas não coincidem.", "OK");
+                return;
+            }
 
-        private void OnForwardButtonClicked(object sender, EventArgs e)
-        {
-            // Lógica para o botão de avançar
+            // Aqui você pode adicionar a lógica para salvar os dados do usuário
+            // e retornar para a tela de login
+
+            await DisplayAlert("Sucesso", "Cadastro realizado com sucesso!", "OK");
+            await Navigation.PopAsync(); // Volta para a tela anterior (login)
         }
     }
 }
+

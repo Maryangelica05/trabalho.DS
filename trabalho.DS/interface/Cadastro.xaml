@@ -1,57 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="trabalho.DS.Cadastro"
-             BackgroundColor="MediumSeaGreen">
+              BackgroundColor="#00A36C">
 
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        
+    <Grid Padding="10" BackgroundColor="#C8E6C9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
         <Label Text="CADASTRAR"
-               FontSize="Large"
                FontAttributes="Bold"
+               FontSize="Large"
                HorizontalOptions="Center"
-               VerticalOptions="Center"/>
-        
-        <Entry Placeholder="NOME"
-               x:Name="NomeEntry"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
-        
-        <Entry Placeholder="CPF/CNPJ"
-               x:Name="CpfCnpjEntry"
-               Keyboard="Numeric"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
-        
-        <Entry Placeholder="SENHA"
-               x:Name="SenhaEntry"
-               IsPassword="True"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
-        
-        <Entry Placeholder="CONFIRMA SENHA"
-               x:Name="ConfirmaSenhaEntry"
-               IsPassword="True"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
-        
+               Grid.Row="0"
+               Margin="0,20,0,0" />
+
+        <Label Text="NOME:" FontAttributes="Bold" Grid.Row="1" />
+        <Entry x:Name="NomeEntry" Placeholder="Digite seu nome" Grid.Row="1" Margin="0,0,0,10"/>
+
+        <Label Text="CPF/CNPJ:" FontAttributes="Bold" Grid.Row="2" />
+        <Entry x:Name="CpfCnpjEntry" Placeholder="Digite seu CPF ou CNPJ" Grid.Row="2" Margin="0,0,0,10"/>
+
+        <Label Text="SENHA:" FontAttributes="Bold" Grid.Row="3" />
+        <Entry x:Name="SenhaEntry" Placeholder="Digite sua senha" IsPassword="True" Grid.Row="3" Margin="0,0,0,10"/>
+
+        <Label Text="CONFIRMA SENHA:" FontAttributes="Bold" Grid.Row="4" />
+        <Entry x:Name="ConfirmaSenhaEntry" Placeholder="Confirme sua senha" IsPassword="True" Grid.Row="4" Margin="0,0,0,10"/>
+
         <Button Text="FINALIZAR CADASTRO"
-                x:Name="FinalizarCadastroButton"
-                BackgroundColor="LightGreen"
+                Clicked="OnFinalizarCadastroClicked"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
                 HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Clicked="OnFinalizarCadastroButtonClicked"/>
-        
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Button Text="⟵"
-                    x:Name="BackButton"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Clicked="OnBackButtonClicked"/>
-            <Button Text="⟶"
-                    x:Name="ForwardButton"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Clicked="OnForwardButtonClicked"/>
+                VerticalOptions="End"
+                Grid.Row="6"
+                Margin="0,20,0,20" />
+
+        <StackLayout Orientation="Horizontal" Grid.Row="8" HorizontalOptions="FillAndExpand">
+            <Button Text="⟸"
+                    FontAttributes="Bold"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    FontSize="Large"
+                    VerticalOptions="End"
+                    HorizontalOptions="Start" />
+            <Button Text="⟹"
+                    FontAttributes="Bold"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    FontSize="Large"
+                    VerticalOptions="End"
+                    HorizontalOptions="End" />
         </StackLayout>
-    </StackLayout>
+    </Grid>
 </ContentPage>
+
+
