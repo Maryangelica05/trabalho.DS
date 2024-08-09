@@ -7,6 +7,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -43,18 +44,16 @@
                     BackgroundColor="LightGreen"
                     HorizontalOptions="FillAndExpand"
                     Clicked="OnNoCadastroButtonClicked"/>
-
-            <!-- StackLayout para os botões de navegação -->
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,30,0,0" Spacing="50">
-                <Button Text="⟵"
-                        x:Name="BackButton"
-                        HorizontalOptions="Center"
-                        Clicked="OnBackButtonClicked"/>
-                <Button Text="⟶"
-                        x:Name="ForwardButton"
-                        HorizontalOptions="Center"
-                        Clicked="OnForwardButtonClicked"/>
-            </StackLayout>
         </StackLayout>
-    </Grid>
+
+        <!-- StackLayout para os botões de navegação -->
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+   
 </ContentPage>
+
+

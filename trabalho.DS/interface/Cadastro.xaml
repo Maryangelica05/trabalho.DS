@@ -47,21 +47,24 @@
                 Grid.Row="6"
                 Margin="0,20,0,20" />
 
-        <StackLayout Orientation="Horizontal" Grid.Row="8" HorizontalOptions="FillAndExpand">
-            <Button Text="⟸"
-                    FontAttributes="Bold"
-                    BackgroundColor="Transparent"
-                    TextColor="Black"
-                    FontSize="Large"
-                    VerticalOptions="End"
-                    HorizontalOptions="Start" />
-            <Button Text="⟹"
-                    FontAttributes="Bold"
-                    BackgroundColor="Transparent"
-                    TextColor="Black"
-                    FontSize="Large"
-                    VerticalOptions="End"
-                    HorizontalOptions="End" />
+         <ImageButton Source="voltar.png"
+                         x:Name="BackButton"
+                         WidthRequest="50"
+                         HeightRequest="50"
+                         Clicked="OnBackButtonClicked"
+                         Grid.Column="0"
+                         HorizontalOptions="Start"
+                         VerticalOptions="End" />
+
+            <!-- Botão de Próximo -->
+            <ImageButton Source="proximo.png"
+                         x:Name="ForwardButton"
+                         WidthRequest="50"
+                         HeightRequest="50"
+                         Clicked="OnForwardButtonClicked"
+                         Grid.Column="2"
+                         HorizontalOptions="End"
+                         VerticalOptions="End" />
         </StackLayout>
     </Grid>
 </ContentPage>

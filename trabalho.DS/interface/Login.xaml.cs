@@ -38,7 +38,7 @@ namespace trabalho.DS
         private void OnNoCadastroButtonClicked(object sender, EventArgs e)
         {
             // Lógica para o botão de cadastro
-            DisplayAlert("Cadastro", "Ainda não foi implementado.", "OK");
+            Aplication("Cadastro", "Ainda não foi implementado.", "OK");
         }
 
         private async void OnBackButtonClicked(object sender, EventArgs e)
