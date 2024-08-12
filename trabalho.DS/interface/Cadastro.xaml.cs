@@ -1,5 +1,3 @@
-
-
 using Microsoft.Maui.Controls;
 using System;
 
@@ -31,6 +29,10 @@ namespace trabalho.DS
             await DisplayAlert("Sucesso", "Cadastro realizado com sucesso!", "OK");
             await Navigation.PopAsync(); // Volta para a tela anterior (login)
         }
+
+      
     }
 }
+
+
 

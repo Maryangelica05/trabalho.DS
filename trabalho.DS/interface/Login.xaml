@@ -53,7 +53,10 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
+            <!-- Adicione conteúdo aqui, se necessário -->
+        </Grid>
    
+    </Grid>
 </ContentPage>
 
 

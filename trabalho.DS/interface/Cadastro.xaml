@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="trabalho.DS.Cadastro"
-              BackgroundColor="#00A36C">
+             BackgroundColor="#00A36C">
 
     <Grid Padding="10" BackgroundColor="#C8E6C9">
         <Grid.RowDefinitions>
@@ -17,6 +17,8 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
+            <!-- Adicionando uma coluna para o botão "ForwardButton" -->
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
         <Label Text="CADASTRAR"
@@ -47,26 +49,10 @@
                 Grid.Row="6"
                 Margin="0,20,0,20" />
 
-         <ImageButton Source="voltar.png"
-                         x:Name="BackButton"
-                         WidthRequest="50"
-                         HeightRequest="50"
-                         Clicked="OnBackButtonClicked"
-                         Grid.Column="0"
-                         HorizontalOptions="Start"
-                         VerticalOptions="End" />
 
-            <!-- Botão de Próximo -->
-            <ImageButton Source="proximo.png"
-                         x:Name="ForwardButton"
-                         WidthRequest="50"
-                         HeightRequest="50"
-                         Clicked="OnForwardButtonClicked"
-                         Grid.Column="2"
-                         HorizontalOptions="End"
-                         VerticalOptions="End" />
-        </StackLayout>
+
     </Grid>
 </ContentPage>
+
 
 

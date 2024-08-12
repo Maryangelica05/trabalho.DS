@@ -35,11 +35,12 @@ namespace trabalho.DS
             // }
         }
 
-        private void OnNoCadastroButtonClicked(object sender, EventArgs e)
+        private async void OnNoCadastroButtonClicked(object sender, EventArgs e)
         {
             // Lógica para o botão de cadastro
-            Aplication("Cadastro", "Ainda não foi implementado.", "OK");
+            await DisplayAlert("Cadastro", "Ainda não foi implementado.", "OK");
         }
+
 
         private async void OnBackButtonClicked(object sender, EventArgs e)
         {
@@ -62,7 +63,7 @@ namespace trabalho.DS
     }
 }
 
-       
+
 
 
 
