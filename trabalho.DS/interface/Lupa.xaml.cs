@@ -10,12 +10,12 @@ namespace trabalho.DS
             InitializeComponent();
         }
 
-        private void OnContinuarButtonClicked(object sender, EventArgs e)
+        private void OnContinuarClicked(object sender, EventArgs e)
         {
             // Lógica para o botão continuar
         }
 
-        private void OnBackButtonClicked(object sender, EventArgs e)
+        private void OnVoltarClicked(object sender, EventArgs e)
         {
             // Lógica para o botão de voltar
         }

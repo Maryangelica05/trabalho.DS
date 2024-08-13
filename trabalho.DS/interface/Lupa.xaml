@@ -1,45 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="trabalho.DS.Lupa"
-             BackgroundColor="MediumSeaGreen">
+             BackgroundColor="#ADDF98">
 
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        
-        <Image Source="lupa.png"
-               WidthRequest="100"
-               HeightRequest="100"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
-        
-        <Label Text="LUPA FINANCE"
-               FontSize="Large"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
-        
-        <Label Text="SUA VISÃO FINANCEIRA AMPLIADA"
-               FontSize="Medium"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
-        
-        <Button Text="CONTINUAR"
-                x:Name="ContinuarButton"
-                BackgroundColor="LightGreen"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Clicked="OnContinuarButtonClicked"/>
-        
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Button Text="⟵"
-                    x:Name="BackButton"
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Conteúdo Principal -->
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0">
+            <Image Source="lupa.png" WidthRequest="100" HeightRequest="100" />
+            <Label Text="LUPA FINANCE"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalOptions="Center" />
+            <Label Text="SUA VISÃO FINANCEIRA AMPLIADA"
+                   FontSize="Medium"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20" />
+            <Button Text="CONTINUAR"
+                    BackgroundColor="#B2FF59"
+                    TextColor="Black"
+                    Clicked="OnContinuarClicked"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
-                    Clicked="OnBackButtonClicked"/>
-            <Button Text="⟶"
-                    x:Name="ForwardButton"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Clicked="OnForwardButtonClicked"/>
+                    Margin="0,10,0,0" />
         </StackLayout>
-    </StackLayout>
+
+        <!-- Botões de Navegação -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Botão Voltar -->
+            <ImageButton Source="voltar.png"
+                         HorizontalOptions="Start"
+                         VerticalOptions="End"
+                         Clicked="OnVoltarClicked"
+                         Grid.Column="0" />
+
+            <!-- Botão Próxima Página -->
+            <ImageButton Source="proxima.png"
+                         HorizontalOptions="End"
+                         VerticalOptions="End"
+                         Clicked="OnProximaClicked"
+                         Grid.Column="2" />
+        </Grid>
+    </Grid>
 </ContentPage>
