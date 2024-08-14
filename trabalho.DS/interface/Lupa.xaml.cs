@@ -20,7 +20,7 @@ namespace trabalho.DS
             // Lógica para o botão de voltar
         }
 
-        private void OnForwardButtonClicked(object sender, EventArgs e)
+        private void OnProximoClicked(object sender, EventArgs e)
         {
             // Lógica para o botão de avançar
         }

@@ -23,8 +23,13 @@ namespace trabalho.DS
                 return;
             }
 
-            // Aqui você pode adicionar a lógica para salvar os dados do usuário
-            // e retornar para a tela de login
+           {
+            var c= new Modelos.Cliente();
+            c.Nome=NomeEntry.Text;
+            c.Cnpj=CpfCnpjEntry.Text;
+            c.Senha=SenhaEntry.Text;
+
+           }
 
             await DisplayAlert("Sucesso", "Cadastro realizado com sucesso!", "OK");
             await Navigation.PopAsync(); // Volta para a tela anterior (login)

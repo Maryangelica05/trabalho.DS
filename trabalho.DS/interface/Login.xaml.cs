@@ -55,7 +55,7 @@ namespace trabalho.DS
             }
         }
 
-        private void OnForwardButtonClicked(object sender, EventArgs e)
+        private void OnProximoClicked(object sender, EventArgs e)
         {
             // Lógica para o botão de avançar
             DisplayAlert("Navegação", "Ainda não foi implementado.", "OK");

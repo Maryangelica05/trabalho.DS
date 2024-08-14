@@ -46,10 +46,10 @@
                          Grid.Column="0" />
 
             <!-- Botão Próxima Página -->
-            <ImageButton Source="proxima.png"
+            <ImageButton Source="proximo.png"
                          HorizontalOptions="End"
                          VerticalOptions="End"
-                         Clicked="OnProximaClicked"
+                         Clicked="OnProximoClicked"
                          Grid.Column="2" />
         </Grid>
     </Grid>
