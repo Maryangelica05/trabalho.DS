@@ -1,7 +1,8 @@
 using LiteDB;
 using Modelos;
 
-namespace Controle ; 
+namespace Controles;
+
 public class BaseControle
 {
   //----------------------------------------------------------------------------
