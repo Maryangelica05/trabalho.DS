@@ -1,7 +1,7 @@
 using Microsoft.Maui.Controls;
 using System;
 
-namespace trabalho.DS
+namespace trabalho.DS 
 {
     public partial class Cadastro : ContentPage
     {

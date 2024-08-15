@@ -18,11 +18,13 @@ namespace trabalho.DS
         private void OnVoltarClicked(object sender, EventArgs e)
         {
             // Lógica para o botão de voltar
+           Application.Current.MainPage = new Login();
         }
 
         private void OnProximoClicked(object sender, EventArgs e)
         {
             // Lógica para o botão de avançar
+             Application.Current.MainPage = new Login();
         }
     }
 }

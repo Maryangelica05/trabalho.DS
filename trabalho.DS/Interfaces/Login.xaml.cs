@@ -45,9 +45,11 @@ namespace trabalho.DS
         private async void OnBackButtonClicked(object sender, EventArgs e)
         {
             // Navegar para a página anterior
+              Application.Current.MainPage = new Login();
             if (Navigation.NavigationStack.Count > 1)
             {
                 await Navigation.PopAsync();
+                
             }
             else
             {
