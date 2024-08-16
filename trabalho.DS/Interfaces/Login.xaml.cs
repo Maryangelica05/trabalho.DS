@@ -9,7 +9,11 @@ namespace trabalho.DS
         {
             InitializeComponent();
         }
-
+          private async void OnContinuarClicked (object sender, EventArgs e)
+        {
+            // Lógica para o botão de cadastro
+            Application.Current.MainPage = new Menu();
+        }
         private void OnLoginButtonClicked(object sender, EventArgs e)
         {
             // Acessar diretamente os controles UI como membros da classe
@@ -38,31 +42,13 @@ namespace trabalho.DS
         private async void OnNoCadastroButtonClicked(object sender, EventArgs e)
         {
             // Lógica para o botão de cadastro
-            await DisplayAlert("Cadastro", "Ainda não foi implementado.", "OK");
+            Application.Current.MainPage = new Cadastro();
         }
 
 
-        private async void OnBackButtonClicked(object sender, EventArgs e)
-        {
-            // Navegar para a página anterior
-              Application.Current.MainPage = new Login();
-            if (Navigation.NavigationStack.Count > 1)
-            {
-                await Navigation.PopAsync();
-                
-            }
-            else
-            {
-                DisplayAlert("Aviso", "Não há páginas anteriores.", "OK");
-            }
+            
         }
 
-        private void OnProximoClicked(object sender, EventArgs e)
-        {
-            // Lógica para o botão de avançar
-            DisplayAlert("Navegação", "Ainda não foi implementado.", "OK");
-        }
-    }
 }
 
 

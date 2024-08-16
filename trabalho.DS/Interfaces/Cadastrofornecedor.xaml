@@ -25,11 +25,21 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Text="NOME:" TextColor="Black" Grid.Row="0" Grid.Column="0" Margin="5"/>
-            <Entry Grid.Row="0" Grid.Column="1" Margin="5"/>
+            <Label Text="NOME:" 
+            TextColor="Black" 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Margin="0,50,0,05"/>
+            <Entry Grid.Row="0" 
+            Grid.Column="1" 
+            Margin="5"
+            VerticalOptions="StartAndExpand"
+           HorizontalOptions="FillAndExpand"/>
 
-            <Label Text="CNPJ:" TextColor="Black" Grid.Row="1" Grid.Column="0" Margin="5"/>
-            <Entry Grid.Row="1" Grid.Column="1" Margin="5"/>
+            <Label Text="CNPJ:" TextColor="Black" Grid.Row="1" Grid.Column="0" Margin="0,50,0,0"/>
+            <Entry Grid.Row="1" Grid.Column="1" Margin="5"
+            VerticalOptions="Center"
+           HorizontalOptions="FillAndExpand"/>
 
             <Label Text="TELEFONE:" TextColor="Black" Grid.Row="2" Grid.Column="0" Margin="5"/>
             <Entry Grid.Row="2" Grid.Column="1" Margin="5"/>
@@ -39,7 +49,8 @@
 
             <Button Text="+" Grid.Row="3" Grid.Column="2" BackgroundColor="LightGreen" TextColor="Black" Margin="5"/>
 
-            <Button Text="SALVAR E FINALIZAR" Grid.Row="4" Grid.ColumnSpan="3" BackgroundColor="LightGreen" TextColor="Black" Margin="10"/>
+            <Button Text="SALVAR E FINALIZAR" Grid.Row="4" Grid.ColumnSpan="3" BackgroundColor="LightGreen" TextColor="Black" Margin="10"
+            Clicked="OnSalvarClicked"/>
         </Grid>
 
         <Grid Margin="0,20,0,0">
@@ -47,8 +58,8 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Text="&#x2190;" Grid.Column="0" BackgroundColor="Transparent" TextColor="Black" />
-            <Button Text="&#x2192;" Grid.Column="1" BackgroundColor="Transparent" TextColor="Black" />
+            <Button ImageSource="voltar.png" Grid.Column="0" BackgroundColor="Transparent" TextColor="Black" />
+            <Button ImageSource="proximo.png" Grid.Column="3" BackgroundColor="Transparent" TextColor="Black" />
         </Grid>
     </StackLayout>
 </ContentPage>

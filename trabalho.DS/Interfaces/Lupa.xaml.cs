@@ -24,7 +24,7 @@ namespace trabalho.DS
         private void OnProximoClicked(object sender, EventArgs e)
         {
             // Lógica para o botão de avançar
-             Application.Current.MainPage = new Login();
+             Application.Current.MainPage = new Menu();
         }
     }
 }

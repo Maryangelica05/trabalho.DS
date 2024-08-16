@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="trabalho.DS.Fornecedor"
-             BackgroundColor="#00A36C">
+             BackgroundColor="#B2EDA0">
 
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         

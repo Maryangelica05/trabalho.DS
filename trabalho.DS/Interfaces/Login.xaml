@@ -1,7 +1,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="trabalho.DS.Login"
-             BackgroundColor="MediumSeaGreen">
+             BackgroundColor="#B2EDA0">
 
     <Grid Padding="20">
         <Grid.RowDefinitions>
@@ -35,13 +35,13 @@
         <StackLayout Grid.Row="1" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="20">
             <Button Text="LOGAR"
                     x:Name="LoginButton"
-                    BackgroundColor="LightGreen"
+                    BackgroundColor="#D0FDD7"
                     HorizontalOptions="FillAndExpand"
                     Clicked="OnLoginButtonClicked"/>
             
             <Button Text="NÃO POSSUO CADASTRO"
                     x:Name="NoCadastroButton"
-                    BackgroundColor="LightGreen"
+                    BackgroundColor="#D0FDD7"
                     HorizontalOptions="FillAndExpand"
                     Clicked="OnNoCadastroButtonClicked"/>
         </StackLayout>
