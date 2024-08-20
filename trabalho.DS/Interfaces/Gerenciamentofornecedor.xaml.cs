@@ -2,7 +2,9 @@
 namespace trabalho.DS
 {
     public partial class Gerenciamentofornecedor : ContentPage
-    {
+    { 
+        public Fornecedor fornecedor { get; set; }
+         Controles.FornecedorControle fornecedorControle = new Controles.FornecedorControle();
         public Gerenciamentofornecedor()
         {
             InitializeComponent();
