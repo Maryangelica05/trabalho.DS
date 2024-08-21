@@ -4,38 +4,32 @@
              x:Class="trabalho.DS.Gerenciamentofornecedor"
              BackgroundColor="#B2EDA0">
 
-    <ContentPage.Content>
-        <StackLayout Padding="20">
-            <!-- Header -->
-            <Label Text="Gerenciamento de Fornecedor" 
-                   FontSize="Large" 
-                   HorizontalOptions="Center" />
-
-            <!-- Nome e CNPJ -->
-            <Entry x:Name="NomeEntry" Placeholder="Nome" />
-            <Entry x:Name="CnpjEntry" Placeholder="CNPJ" />
-
-            <!-- Materiais Primas -->
-            <Picker x:Name="materiaisPrimasPicker" Title="Materiais Primas">
-                <!-- Items can be added here -->
-            </Picker>
-
-            <!-- Buttons for actions -->
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Button Text="Desativar" Clicked="OnDesativarClicked" />
-                <Button Text="Editar" Clicked="OnEditarClicked" />
-            </StackLayout>
-
-            <!-- Confirmation area -->
-            <StackLayout x:Name="confirmationArea" IsVisible="False">
-                <Label Text="Deseja realmente desativar fornecedor?"
-                       HorizontalOptions="Center" 
-                       FontSize="Medium" />
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Button Text="✖" Clicked="OnCancelClicked" />
-                    <Button Text="✔" Clicked="OnConfirmClicked" />
-                </StackLayout>
-            </StackLayout>
-        </StackLayout>
-    </ContentPage.Content>
+  <VerticalStackLayout>
+  <Button Text="Criar Novo Fornecedor"
+          BackgroundColor="Green"
+          FontSize="16"
+          TextColor="Black"
+          Clicked="NovoFornecedorClicked"/>
+    <ListView x:Name="ListaFornecedores"
+              HasUnevenRows="True"
+              ItemSelected="QuandoSelecionarUmItemNaLista"
+              HorizontalOptions="Fill"
+              VerticalOptions="Fill">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <VerticalStackLayout Padding="20"
+                                BackgroundColor="Pink">
+              <HorizontalStackLayout>
+                <Label Text="{Binding Nome}"
+                      FontSize="20"/>
+              </HorizontalStackLayout>
+              <Label Text="{Binding Telefone}"
+                      FontSize="20"/>
+            </VerticalStackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </VerticalStackLayout>
 </ContentPage>
