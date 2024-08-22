@@ -26,20 +26,22 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-             <Label Text="ID:" />
-             <Label x:Name="IdLabel"/>
-            <Label x:Name="IdLabel" />
+             <Label Text="ID:" 
+             x:Name="IdLabel"/>
            <Entry Grid.Row="0" 
             Grid.Column="0" 
             Margin="0,50,0,05"/>
 
 
             <Label Text="NOME:" 
+            x:Name="Nomefornecedor"
             TextColor="Black" 
             Grid.Row="1" 
             Grid.Column="1" 
             Margin="0,50,0,05"/>
-            <Entry Grid.Row="0" 
+            <Entry 
+            x:Name="NomefornecedorEntry"
+             Grid.Row="0" 
             Grid.Column="1" 
             Margin="5"
             VerticalOptions="StartAndExpand"
@@ -50,8 +52,14 @@
             VerticalOptions="Center"
            HorizontalOptions="FillAndExpand"/>
 
-            <Label Text="TELEFONE:" TextColor="Black" Grid.Row="2" Grid.Column="0" Margin="5"/>
-            <Entry Grid.Row="3" Grid.Column="3" Margin="5"/>
+            <Label Text="TELEFONE:" 
+             x:Name="Telefone"
+            TextColor="Black" Grid.Row="2"
+             Grid.Column="0" Margin="5"/>
+            <Entry Grid.Row="3"
+            x:Name="TelefoneEntry"
+             Grid.Column="3" 
+             Margin="5"/>
 
             <Label Text="MATERIAS PRIMA FORNECIDAS:" TextColor="Black" Grid.Row="3" Grid.Column="0" Margin="5"/>
             <Entry Grid.Row="3" Grid.Column="1" Margin="5"/>
