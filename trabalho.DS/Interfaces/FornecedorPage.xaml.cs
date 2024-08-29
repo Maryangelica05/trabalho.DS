@@ -2,9 +2,9 @@ using Microsoft.Maui.Controls;
 
 namespace trabalho.DS
 {
- public partial class Fornecedor : ContentPage
+ public partial class FornecedorPage : ContentPage
      {
-        public Fornecedor()
+        public FornecedorPage()
         {
             InitializeComponent();
         }
@@ -12,13 +12,13 @@ namespace trabalho.DS
         
         {
             // Lógica para o botão continuar
-            Application.Current.MainPage = new Cadastrofornecedor();
+            Application.Current.MainPage = new CadastrofornecedorPage();
         }
 
         private void Ongerenciamentofornecedor(object sender, EventArgs e)
         {
             // Lógica para o botão de voltar
-              Application.Current.MainPage = new Gerenciamentofornecedor();
+              Application.Current.MainPage = new GerenciamentofornecedorPage();
         }
          private void OnVoltarClicked(object sender, EventArgs e)
         

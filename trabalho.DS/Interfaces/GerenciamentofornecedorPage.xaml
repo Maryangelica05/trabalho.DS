@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="trabalho.DS.Gerenciamentofornecedor"
+             x:Class="trabalho.DS.GerenciamentofornecedorPage"
              BackgroundColor="#B2EDA0">
 
   <VerticalStackLayout>
-  <Button Text="Criar Novo Fornecedor"
-          BackgroundColor="Green"
-          FontSize="16"
-          TextColor="Black"
-          Clicked="NovoFornecedorClicked"/>
+    <Button Text="Criar Novo Fornecedor"
+            BackgroundColor="Green"
+            FontSize="16"
+            TextColor="Black"
+            Clicked="NovoFornecedorClicked"/>
     <ListView x:Name="ListaFornecedores"
               HasUnevenRows="True"
               ItemSelected="QuandoSelecionarUmItemNaLista"
@@ -19,13 +19,13 @@
         <DataTemplate>
           <ViewCell>
             <VerticalStackLayout Padding="20"
-                                BackgroundColor="Pink">
+                                 BackgroundColor="Pink">
               <HorizontalStackLayout>
                 <Label Text="{Binding Nome}"
-                      FontSize="20"/>
+                       FontSize="20"/>
               </HorizontalStackLayout>
               <Label Text="{Binding Telefone}"
-                      FontSize="20"/>
+                     FontSize="20"/>
             </VerticalStackLayout>
           </ViewCell>
         </DataTemplate>

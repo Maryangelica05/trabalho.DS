@@ -22,7 +22,7 @@ namespace trabalho.DS
         }
         private void OnFornecedorClicked(object sender, EventArgs e)
         {
-         Application.Current.MainPage = new Fornecedor();
+         Application.Current.MainPage = new FornecedorPage();
         }
 
         private void OnMateriaisClicked(object sender, EventArgs e)
