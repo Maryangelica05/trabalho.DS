@@ -35,7 +35,7 @@ namespace trabalho.DS
             var total = 0.0;
             foreach (var expense in Expenses)
             {
-                total += expense.Value;
+                total += expense.Value; // Usar 'Value' para corresponder ao nome da propriedade
             }
             TotalExpensesLabel.Text = $"Gastos Totais: R$ {total:F2}";
         }
@@ -45,6 +45,17 @@ namespace trabalho.DS
     {
         public string Date { get; set; }
         public string Description { get; set; }
-        public double Value { get; set; }
+        public double Value { get; set; } // Usar 'Value' para corresponder ao nome da propriedade
     }
+     private void OnproximoClicked(object sender, EventArgs e)
+        {
+            // Lógica para o botão continuar
+        }
+
+        private void OnVoltarClicked(object sender, EventArgs e)
+        {
+            // Lógica para o botão de voltar
+           Application.Current.MainPage = new Login();
+        }
+
 }

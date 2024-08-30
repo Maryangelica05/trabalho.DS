@@ -39,12 +39,13 @@ public CadastrofornecedorPage ()
       IdLabel.Text = fornecedor.Id.ToString();
       NomeEntry.Text = fornecedor.Nome;
       TelefoneEntry.Text = fornecedor.Telefone;
+      CnpjEntry.Text= fornecedor.Cnpj;
     }
   }
 
   //--------------------------------------------------------------------------------------------------
   // Método para limpar os dados da Entry
-  private async void OnApagarClienteClicked(object sender, EventArgs e)
+  private async void OnApagarForneecdorClicked(object sender, EventArgs e)
   {
     // Verifica se estamos editando um cliente ou criando um cliente
     // Se estiver criando, não se pode apagar, já que não se tem um `cliente.Id`
@@ -77,6 +78,7 @@ public CadastrofornecedorPage ()
         fornecedor.Id = 0;
       fornecedor.Nome = NomeEntry.Text;
       fornecedor.Telefone = TelefoneEntry.Text;
+      fornecedor.Cnpj=CnpjEntry.Text;
 
       // Com o objeto preenchido enviamos para o controle para criar/atualizar no Banco de Dados
       fornecedorControle.CriarOuAtualizar(fornecedor);
@@ -98,7 +100,11 @@ public CadastrofornecedorPage ()
       return false;
     }
     // Verifica se a Entry do Sobrenome está vazia
-
+else if (String.IsNullOrEmpty(CnpjEntry.Text))
+    {
+      await DisplayAlert("Cadastrar", "O campo CNPJ é obrigatório", "OK");
+      return false;
+    }
     // Verifica se a Entry do Telefone está vazia
     else if (String.IsNullOrEmpty(TelefoneEntry.Text))
     {

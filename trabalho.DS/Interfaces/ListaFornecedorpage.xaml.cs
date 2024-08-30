@@ -36,4 +36,9 @@ public partial class ListaFornecedorPage : ContentPage
     // sendo assim, apenas criamos a nova página
     Application.Current.MainPage = new CadastrofornecedorPage();
   }
+  private async void OnContinuarClicked (object sender, EventArgs e)
+        {
+            // Lógica para o botão de cadastro
+            Application.Current.MainPage = new Menu();
+        }
 }

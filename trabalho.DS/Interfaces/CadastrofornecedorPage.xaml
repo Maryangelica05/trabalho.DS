@@ -29,7 +29,7 @@
                 <Button Text="Excluir"
                         TextColor="Red"
                         BackgroundColor="Transparent"
-                        Clicked="OnApagarClienteClicked"/>
+                        Clicked="OnApagarForneecdorClicked"/>
                 <Button Text="SALVAR DADOS"
                         TextColor="Green"
                         BackgroundColor="Transparent"

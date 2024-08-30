@@ -8,7 +8,7 @@
     Title="trabalho.DS">
 
     <ShellContent
-        ContentTemplate="{DataTemplate local:Menu
+        ContentTemplate="{DataTemplate local:Financeiro
         }"
         Route="MainPage" />
 

@@ -5,11 +5,11 @@
              BackgroundColor="#B2EDA0"
              Title="GERENCIR FORNECEDOR">
   <VerticalStackLayout>
-  <Button Text="Criar Novo Cliente"
-          BackgroundColor="Orange"
-          FontSize="16"
-          TextColor="Black"
-          Clicked="NovoClienteClicked"/>
+    <Button Text="Criar Novo Cliente"
+            BackgroundColor="Orange"
+            FontSize="16"
+            TextColor="Black"
+            Clicked="NovoClienteClicked"/>
     <ListView x:Name="ListaFornecedor"
               HasUnevenRows="True"
               ItemSelected="QuandoSelecionarUmItemNaLista"
@@ -19,20 +19,44 @@
         <DataTemplate>
           <ViewCell>
             <VerticalStackLayout Padding="20"
-                                BackgroundColor="Pink">
+                                 BackgroundColor="Pink">
               <HorizontalStackLayout>
                 <Label Text="{Binding Nome}"
-                      FontSize="20"/>
-                <Label Text="{Binding Sobrenome}"
-                      FontSize="20"
-                      Margin="10,0,0,0"/>
+                       FontSize="20"/>
+                <Label Text="{Binding Cnpj}"
+                       FontSize="20"
+                       Margin="10,0,0,0"/>
               </HorizontalStackLayout>
               <Label Text="{Binding Telefone}"
-                      FontSize="20"/>
+                     FontSize="20"/>
+              <StackLayout Orientation="Horizontal"
+                  HorizontalOptions="Center"
+                  Margin="0,20,0,0">
+                <Grid Grid.Row="1">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                  </Grid.ColumnDefinitions>
+
+                  <!-- Botão continuar -->
+
+                  <Button Text="CONTINUAR"
+                          BackgroundColor="#B2FF59"
+                          TextColor="Black"
+                          Clicked="OnContinuarClicked"
+                          HorizontalOptions="End"
+                          VerticalOptions="End"
+                          Grid.Column="0"/>
+                </Grid>
+               </StackLayout>
             </VerticalStackLayout>
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
+
   </VerticalStackLayout>
 </ContentPage>

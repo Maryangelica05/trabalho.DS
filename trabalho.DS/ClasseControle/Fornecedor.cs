@@ -11,7 +11,11 @@ public class FornecedorControle : BaseControle
   {
     NomeDaTabela = "Fornecedores";
   }
-
+ public virtual Registro? Ler(int idFornecedor)
+  {
+    var collection = liteDB.GetCollection<Fornecedor>(NomeDaTabela);
+    return collection.FindOne(d => d.Id == idFornecedor);
+  }
   //----------------------------------------------------------------------------
 
   //----------------------------------------------------------------------------
@@ -20,6 +24,11 @@ public class FornecedorControle : BaseControle
   {
     var tabela = liteDB.GetCollection<Fornecedor>(NomeDaTabela);
     return new List<Fornecedor>(tabela.FindAll());
+  }
+  public virtual void Apagar(int idFornecedor)
+  {
+    var collection = liteDB.GetCollection<Fornecedor>(NomeDaTabela);
+    collection.Delete(idFornecedor);
   }
 
   //----------------------------------------------------------------------------
@@ -32,6 +41,7 @@ public class FornecedorControle : BaseControle
     var collection = liteDB.GetCollection<Fornecedor>(NomeDaTabela);
     collection.Upsert(c);
   }
+
 
   //----------------------------------------------------------------------------
 }

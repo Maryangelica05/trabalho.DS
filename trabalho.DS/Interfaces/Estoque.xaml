@@ -58,7 +58,8 @@
                     <Button  ImageSource= "confirmar.png"
                             x:Name="ConfirmButton"
                             HorizontalOptions="Center"
-                            Clicked="OnConfirmButtonClicked"/>
+                            Clicked="OnConfirmButtonClicked"
+                            />
                 </StackLayout>
             </StackLayout>
         </Frame>

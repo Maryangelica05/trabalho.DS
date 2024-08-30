@@ -73,20 +73,15 @@
                VerticalOptions="EndAndExpand" />
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-            <Button Text="⟸"
-                    FontAttributes="Bold"
+            <ImageButton Source="voltar.png"
                     BackgroundColor="Transparent"
-                    TextColor="Black"
-                    FontSize="Large"
                     VerticalOptions="End"
-                    HorizontalOptions="Start" />
-            <Button Text="⟹"
-                    FontAttributes="Bold"
-                    BackgroundColor="Transparent"
-                    TextColor="Black"
-                    FontSize="Large"
+                    HorizontalOptions="Start"
+                    Clicked="OnVoltarClicked" />
+            <ImageButton Source="proximo.png"
                     VerticalOptions="End"
-                    HorizontalOptions="End" />
+                    HorizontalOptions="End"
+                     Clicked="OnProximoClicked" />
         </StackLayout>
 
     </StackLayout>
