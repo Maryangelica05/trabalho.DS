@@ -4,7 +4,7 @@ namespace Modelos
     {
         public string Data {get; set;}
         public string Descrição {get; set;}
-        public int Valor {get; set;}
+        public double Valor { get; set; }
 
     }
 }

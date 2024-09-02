@@ -15,11 +15,7 @@ namespace trabalho.DS
             // Lógica para o botão de voltar
               Application.Current.MainPage = new Lupa();
         }
-        private void OnProximoClicked(object sender, EventArgs e)
-        {
-            // Lógica para o botão de voltar
-              Application.Current.MainPage = new Login();
-        }
+  
         private void OnFornecedorClicked(object sender, EventArgs e)
         {
          Application.Current.MainPage = new FornecedorPage();
@@ -35,9 +31,5 @@ namespace trabalho.DS
          Application.Current.MainPage = new Estoque();
         }
        
-          private void OnGastoClicked(object sender, EventArgs e)
-        {
-         Application.Current.MainPage = new Financeiro();
-        }
     }
 }

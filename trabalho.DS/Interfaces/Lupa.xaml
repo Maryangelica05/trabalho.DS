@@ -39,18 +39,6 @@
             </Grid.ColumnDefinitions>
 
             <!-- Botão Voltar -->
-            <ImageButton Source="voltar.png"
-                         HorizontalOptions="Start"
-                         VerticalOptions="End"
-                         Clicked="OnVoltarClicked"
-                         Grid.Column="0" />
-
-            <!-- Botão Próxima Página -->
-            <ImageButton Source="proximo.png"
-                         HorizontalOptions="End"
-                         VerticalOptions="End"
-                         Clicked="OnProximoClicked"
-                         Grid.Column="2" />
         </Grid>
     </Grid>
 </ContentPage>

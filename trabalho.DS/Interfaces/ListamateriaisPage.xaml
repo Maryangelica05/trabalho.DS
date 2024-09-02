@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="trabalho.DS.ListaFornecedorPage"
+             x:Class="trabalho.DS.ListaMateriaisPage"
              BackgroundColor="#B2EDA0"
-             Title="GERENCIR FORNECEDOR">
+             Title="GERENCIR MATERIAIS">
   <VerticalStackLayout>
-    <Button Text="Criar Novo Cliente"
+    <Button Text="ADICIONAR NOVO MATERIAL"
             BackgroundColor="Orange"
             FontSize="16"
             TextColor="Black"
-            Clicked="NovoClienteClicked"/>
-    <ListView x:Name="ListaFornecedor"
+            Clicked="NovoMaterialClicked"/>
+    <ListView x:Name="ListaMaterial"
               HasUnevenRows="True"
               ItemSelected="QuandoSelecionarUmItemNaLista"
               HorizontalOptions="Fill"
@@ -23,11 +23,11 @@
               <HorizontalStackLayout>
                 <Label Text="{Binding Nome}"
                        FontSize="20"/>
-                <Label Text="{Binding Cnpj}"
+                <Label Text="{Binding NomeFornecedor }"
                        FontSize="20"
                        Margin="10,0,0,0"/>
               </HorizontalStackLayout>
-              <Label Text="{Binding Telefone}"
+              <Label Text="{Binding NomeMaterial}"
                      FontSize="20"/>
               <StackLayout Orientation="Horizontal"
                   HorizontalOptions="Center"
