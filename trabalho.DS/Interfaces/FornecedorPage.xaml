@@ -38,6 +38,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
+             
 
             <!-- Botão Voltar -->
             <ImageButton Source="voltar.png"

@@ -33,5 +33,11 @@ namespace trabalho.DS
             // Ocultar o Frame de confirmação sem excluir o material
             ConfirmacaoFrame.IsVisible = false;
         }
+       private void OnVoltarClicked(object sender, EventArgs e)
+        {
+            // Lógica para o botão de voltar
+              Application.Current.MainPage = new Menu();
+        }
+  
     }
 }

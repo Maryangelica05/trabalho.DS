@@ -88,12 +88,6 @@
                 VerticalOptions="End"
                 Clicked="OnBackButtonClicked"/>
 
-        <!-- Botão de avançar à direita -->
-        <Button Grid.Row="2" Grid.Column="2"
-                Text="⟶"
-                x:Name="ForwardButton"
-                HorizontalOptions="End"
-                VerticalOptions="End"
-                Clicked="OnForwardButtonClicked"/>
+        
     </Grid>
 </ContentPage>

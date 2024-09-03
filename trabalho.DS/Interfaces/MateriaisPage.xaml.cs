@@ -17,12 +17,10 @@ namespace trabalho.DS
 
         private void OnBackButtonClicked(object sender, EventArgs e)
         {
-            // Lógica para o botão de voltar
+            Application.Current.MainPage = new Menu();
+        }
         }
 
-        private void OnForwardButtonClicked(object sender, EventArgs e)
-        {
-            // Lógica para o botão de avançar
-        }
-    }
-}
+       
+ }
+

@@ -60,6 +60,12 @@
                             HorizontalOptions="Center"
                             Clicked="OnConfirmButtonClicked"
                             />
+                             <ImageButton Source="voltar.png"
+                         HorizontalOptions="Start"
+                         VerticalOptions="Start"
+                         Clicked="OnVoltarClicked"
+                         Grid.Column="0" />
+                   
                 </StackLayout>
             </StackLayout>
         </Frame>
