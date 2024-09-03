@@ -3,15 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="trabalho.DS.Estoque"
              BackgroundColor="#B2EDA0">
-    <Grid Padding="20">
+   
         <!-- Definição das linhas e colunas da Grid -->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+   
 
         <!-- Header com Título -->
         <Label Text="gerenciamento de estoque"
@@ -22,52 +16,14 @@
                Margin="0,20,0,20"/>
 
         <!-- Comboboxes (Picker) e Botões de Navegação -->
-        <StackLayout Grid.Row="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="10">
-            <Picker Title="ATIVO:"
-                    x:Name="AtivoPicker"
-                    HorizontalOptions="FillAndExpand"/>
-            <Picker Title="FORNECEDOR:"
-                    x:Name="FornecedorPicker"
-                    HorizontalOptions="FillAndExpand"/>
-            <Button ImageSource="lixeira.png"
-                    Command="{Binding ExcluirCommand}"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
-        </StackLayout>
 
-        <!-- Frame para Confirmação -->
-        <Frame x:Name="ConfirmacaoFrame"
-               IsVisible="False"
-               BackgroundColor="White"
-               Padding="20"
-               CornerRadius="10"
-               Grid.Row="1"
-               VerticalOptions="CenterAndExpand"
-               HorizontalOptions="FillAndExpand">
-            <StackLayout VerticalOptions="CenterAndExpand" Spacing="20">
-                <Label Text="Deseja realmente desativar material?"
-                       FontSize="Medium"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"/>
 
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="50">
-                    <Button ImageSource="cancelar.png"
-                            x:Name="CancelButton"
-                            HorizontalOptions="Center"
-                            Clicked="OnCancelButtonClicked"/>
-                    <Button  ImageSource= "confirmar.png"
-                            x:Name="ConfirmButton"
-                            HorizontalOptions="Center"
-                            Clicked="OnConfirmButtonClicked"
-                            />
-                             <ImageButton Source="voltar.png"
+                     <ImageButton Source="voltar.png"
+                      BackgroundColor="White"
                          HorizontalOptions="Start"
                          VerticalOptions="Start"
-                         Clicked="OnVoltarClicked"
-                         Grid.Column="0" />
-                   
-                </StackLayout>
-            </StackLayout>
-        </Frame>
-    </Grid>
+                         Clicked="OnVoltarClicked"/>
+        
+                         
+             
 </ContentPage>
