@@ -7,7 +7,7 @@
 
     <VerticalStackLayout>
         <Button Text="Criar Novo Material"
-                BackgroundColor="Orange"
+                BackgroundColor="Green"
                 FontSize="16"
                 TextColor="Black"
                 Clicked="NovoMaterialClicked"/>
@@ -21,7 +21,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <VerticalStackLayout Padding="20"
-                                             BackgroundColor="Pink">
+                                             BackgroundColor="pink">
                             <HorizontalStackLayout>
                                 <Label Text="{Binding Nome}"
                                        FontSize="20"/>

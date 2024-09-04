@@ -26,10 +26,6 @@ namespace trabalho.DS
          Application.Current.MainPage = new MateriaisPage();
         }
 
-        private void OnEstoqueClicked(object sender, EventArgs e)
-        {
-         Application.Current.MainPage = new Estoque();
-        }
        
     }
 }

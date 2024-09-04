@@ -33,8 +33,7 @@
                 BackgroundColor="#8FBC8F"
                 TextColor="Black"
                 FontAttributes="Bold"
-                Margin="0,10,0,10"
-                Clicked="OnEstoqueClicked"/>
+                Margin="0,10,0,10"/>
 
         <Button Text="GERENCIAMENTO DE GASTO"
                 BackgroundColor="#8FBC8F"

@@ -6,7 +6,7 @@
              Title="GERENCIR FORNECEDOR">
   <VerticalStackLayout>
     <Button Text="Criar Novo Cliente"
-            BackgroundColor="Orange"
+            BackgroundColor="GREEN"
             FontSize="16"
             TextColor="Black"
             Clicked="NovoClienteClicked"/>
@@ -19,8 +19,11 @@
         <DataTemplate>
           <ViewCell>
             <VerticalStackLayout Padding="20"
-                                 BackgroundColor="Pink">
+                                 BackgroundColor="pink">
               <HorizontalStackLayout>
+                <Label Text="{Binding Id}"
+                       FontSize="20"
+                       Margin="10,0,0,0"/>
                 <Label Text="{Binding Nome}"
                        FontSize="20"/>
                 <Label Text="{Binding Cnpj}"

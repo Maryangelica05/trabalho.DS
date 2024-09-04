@@ -8,7 +8,7 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="10">
             <Button Text="voltar"
-                    Clicked="VoltarClicked"
+                    Clicked="OnVoltarClicked"
                     BackgroundColor="Green"
                     TextColor="Black"/>
             <Label Text="Cadastrar Material"
@@ -18,11 +18,14 @@
             <Label Text="ID:" />
             <Label x:Name="IdLabel"/>
             <Label Text="Nome do material:" />
-            <Entry Placeholder="Digite o nome do material" x:Name="NomematerialEntry"/>
+            <Entry Placeholder="Digite o nome do material" x:Name="NomeMaterialEntry"
+                        BackgroundColor="White"/>
              <Label Text="Fornecedor:" />
-            <Entry Placeholder="Digite o nome do fornecedor" x:Name="NomefornecedorEntry"/>
+            <Entry Placeholder="Digite o nome do fornecedor" x:Name="NomeFornecedorEntry"
+                        BackgroundColor="White"/>
             <Label Text="Ativo:" />
-            <Entry Placeholder="Digite o se está ativo no estoque" x:Name="AtivoEntry"/>
+            <Entry Placeholder="Digite o se está ativo no estoque" x:Name="AtivoEntry"
+                        BackgroundColor="White"/>
 
 
             <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
