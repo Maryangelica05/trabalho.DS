@@ -1,56 +1,40 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="trabalhoDS.CadastroMateriaisPage"
-             BackgroundColor="#607D8B">
+             x:Class="trabalho.DS.CadastroMateriaisPage"
+             BackgroundColor="#B2EDA0">
 
-    <Grid VerticalOptions="Center" HorizontalOptions="Center" Padding="20">
-        <StackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
 
-            <!-- Title -->
-            <Label Text="CADASTRO DE MATERIAIA" FontSize="Large" TextColor="#FFD600" HorizontalOptions="Center"/>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Button Text="voltar"
+                    Clicked="VoltarClicked"
+                    BackgroundColor="Green"
+                    TextColor="Black"/>
+            <Label Text="Cadastrar Material"
+                   FontSize="20"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,20"/>
+            <Label Text="ID:" />
+            <Label x:Name="IdLabel"/>
+            <Label Text="Nome do material:" />
+            <Entry Placeholder="Digite o nome do material" x:Name="NomematerialEntry"/>
+             <Label Text="Fornecedor:" />
+            <Entry Placeholder="Digite o nome do fornecedor" x:Name="NomefornecedorEntry"/>
+            <Label Text="Ativo:" />
+            <Entry Placeholder="Digite o se está ativo no estoque" x:Name="AtivoEntry"/>
 
-            <!-- Form -->
-            <StackLayout Spacing="5">
-                <Label Text="ID:" FontSize="Medium" TextColor="White"/>
-                <Label x:Name="IdLabel" FontSize="Medium" TextColor="White"/>
 
-                <Label Text="NOME:" FontSize="Medium" TextColor="White"/>
-                <Entry x:Name="NomeEntry" BackgroundColor="White" TextColor="Black"/>
-
-                <Label Text="FORNECEDOR:" FontSize="Medium" TextColor="White"/>
-                <Entry x:Name="NomeFornecedorEntry" BackgroundColor="White" TextColor="Black"/>
-
-                <Label Text="ATIVO:" FontSize="Medium" TextColor="White"/>
-                <Entry x:Name="AtivoEntry" BackgroundColor="White" TextColor="Black"/>
-            </StackLayout>
-
-            <!-- Buttons -->
-            <Grid ColumnSpacing="20" Margin="0,20,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Button Text="◀" BackgroundColor="Red" TextColor="Black" Grid.Column="0"
-                        Clicked="OnBackButtonClicked"/>
-                <ImageButton Source="delete_icon.png" x:Name="DeleteButton" BackgroundColor="DarkRed" Grid.Column="1" IsVisible="False" HeightRequest="60" WidthRequest="60" CornerRadius="10"
-                        Clicked="DeleteButtonClicked"/>
-                <Button Text="▶" BackgroundColor="Green" TextColor="Black" Grid.Column="2"
-                        Clicked="OnSaveButtonClicked"/>
-            </Grid>
-
-            
-
-        </StackLayout>
-
-        <Frame x:Name="ErrorFrame" BackgroundColor="#FFCDD2" BorderColor="Red" IsVisible="False"
-                   VerticalOptions="Center" HorizontalOptions="Center" Padding="20" CornerRadius="10">
-                <StackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
-                    <Label Text="DADOS INVALIDOS" FontSize="Large" TextColor="Red" HorizontalOptions="Center"/>
-                    <Button Text="OK" BackgroundColor="#B71C1C" TextColor="White" Clicked="OnErrorOkButtonClicked"/>
-                </StackLayout>
-            </Frame>
-    </Grid>
+            <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                <Button Text="Excluir"
+                        TextColor="Red"
+                        BackgroundColor="Transparent"
+                        Clicked="OnApagarMaterialClicked"/>
+                <Button Text="SALVAR DADOS"
+                        TextColor="Green"
+                        BackgroundColor="Transparent"
+                        Clicked="OnSalvarDadosClicked"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

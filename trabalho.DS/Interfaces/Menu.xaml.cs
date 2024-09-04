@@ -23,7 +23,7 @@ namespace trabalho.DS
 
         private void OnMateriaisClicked(object sender, EventArgs e)
         {
-         Application.Current.MainPage = new Materiais();
+         Application.Current.MainPage = new MateriaisPage();
         }
 
         private void OnEstoqueClicked(object sender, EventArgs e)

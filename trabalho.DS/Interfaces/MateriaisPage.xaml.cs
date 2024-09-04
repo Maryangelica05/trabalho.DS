@@ -1,26 +1,31 @@
 using Microsoft.Maui.Controls;
-using System;
 
 namespace trabalho.DS
 {
-    public partial class Materiais : ContentPage
-    {
-        public Materiais()
+ public partial class MateriaisPage : ContentPage
+     {
+        public MateriaisPage()
         {
             InitializeComponent();
         }
-
-        private void OnMenuButtonClicked(object sender, EventArgs e)
+        private void Oncadastromaterial(object sender, EventArgs e)
+        
         {
-            // Lógica para o botão de menu
+            // Lógica para o botão continuar
+            Application.Current.MainPage = new CadastroMateriaisPage();
         }
 
-        private void OnBackButtonClicked(object sender, EventArgs e)
+        private void Ongerenciamentomaterial(object sender, EventArgs e)
         {
+            // Lógica para o botão de voltar
+              Application.Current.MainPage = new GerenciamentomateriaisPage();
+        }
+         private void OnVoltarClicked(object sender, EventArgs e)
+        
+        {
+            // Lógica para o botão continuar
             Application.Current.MainPage = new Menu();
         }
         }
-
-       
- }
-
+}
+  

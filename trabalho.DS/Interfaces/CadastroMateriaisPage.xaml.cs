@@ -6,18 +6,18 @@ namespace trabalho.DS
 {
     public partial class CadastroMateriaisPage : ContentPage
     {
-        Controles.MateriaisControle  materiaisControle = new Controles.MateriaisControle();
-        Controles.MateriaisControle materiaislControle = new Controles.MateriaisControle();
         public Materiais materiais { get; set; }
+        Controles.MateriaisControle materiaisControle = new Controles.MateriaisControle();
+        
+
         public CadastroMateriaisPage()
         {
             InitializeComponent();
-            pickerMaterial.ItemsSource = materiaisControle.LerTodos();
         }
 
         private void OnBackButtonClicked(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new Menu();
+            Application.Current.MainPage = new ListaMateriaisPage();
         }
 
         protected override void OnAppearing()
@@ -26,55 +26,86 @@ namespace trabalho.DS
 
             if (materiais != null)
             {
-                DeleteButton.IsVisible = true;
                 IdLabel.Text = materiais.Id.ToString();
-                NomeEntry.Text      = materiais.Nome;
-                NomefornecedorEntry.Text = materiais.Nomefornecedor;
-               AtivoEntry.Text = materiais.Ativo;
-                pickerMaterial.SelectedItem = produto.Material;
+                NomematerialEntry.Text = materiais.Nome;
+                NomeFornecedorEntry.Text = materiais.NomeFornecedor;
+                AtivoEntry.Text = materiais.Ativo;
+      
+            }
+
+             }
+
+        //--------------------------------------------------------------------------------------------------
+        // Método para apagar os dados do material
+        private async void OnApagarMaterialClicked(object sender, EventArgs e)
+        {
+            // Verifica se estamos editando um material ou criando um material
+            // Se estiver criando, não se pode apagar, já que não se tem um `material.Id`
+            if (material == null || material.Id < 1)
+                await DisplayAlert("Erro", "Nenhum material para excluir", "OK");
+            else if (await DisplayAlert("Excluir", "Tem certeza que deseja excluir esse material?", "Excluir Material", "Cancelar")) // Caso o usuário toque no Botão "Excluir Material"
+            {
+                // Apaga do Banco de Dados
+                materialControle.Apagar(material.Id);
+                // Volta para a tela de Lista
+                Application.Current.MainPage = new ListaMateriaisPage();
             }
         }
 
+        //--------------------------------------------------------------------------------------------------
 
-
-        private void OnSaveButtonClicked(object sender, EventArgs e)
+        private async void OnSalvarDadosClicked(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(NomeEntry.Text) &&
-                !string.IsNullOrWhiteSpace(NomeFornecedorEntry.Text) &&
-                !string.IsNullOrWhiteSpace(AtivoEntry.Text) &&
+            if (await VerificaSeDadosEstaoCorretos()) // Verifica se os dados são válidos antes de salvar no banco
             {
-                ErrorFrame.IsVisible = true;
-
-                var p = new Material();
+                // O código abaixo preenche o objeto material (Modelo) com os dados das Entry's
+                var material = new Modelos.Material();
                 if (!String.IsNullOrEmpty(IdLabel.Text))
-                    p.Id = int.Parse(IdLabel.Text);
+                    material.Id = int.Parse(IdLabel.Text);
                 else
+                    material.Id = 0;
+                material.Nome = NomeMaterialEntry.Text;
+                material.NomeFornecedor = NomeFornecedorEntry.Text;
+                material.Ativo = AtivoEntry.Text;
 
-                    p.Id = 0;
-                p.nome = NomeEntry.Text;
-                p.estoque = NomefornecedorEntry.Text;
-                p.Material = pickerMaterial.SelectedItem as Material;
-                produtoControle.CriarOuAtualizar(p);
-
-                ErrorFrame.IsVisible = false;
-                Application.Current.MainPage = new MateriaisPage();
+                // Com o objeto preenchido enviamos para o controle para criar/atualizar no Banco de Dados
+                materiaisControle.CriarOuAtualizar(materiais);
+                // Mostra a mensagem de sucesso
+                await DisplayAlert("Salvar", "Dados salvos com sucesso!", "OK");
+                // Opcional: Redireciona para a lista de materiais após salvar
+                Application.Current.MainPage = new ListaMateriaisPage();
             }
         }
 
-        private async void DeleteButtonClicked(object sender, EventArgs e)
+        //--------------------------------------------------------------------------------------------------
+        // Esse método pode ser escrito de várias maneiras. A ideia é que você valide os dados antes de 
+        // preencher o objeto (Modelo). 
+        // Perceba que além da retornar false (para indicar erro), também mostra qual o erro
+        private async Task<bool> VerificaSeDadosEstaoCorretos()
         {
-            if (produto == null || produto.Id < 1)
-                await DisplayAlert("Erro", "Nenhum produto para excluir", "ok");
-            else if (await DisplayAlert("Excluir", "Tem certeza que deseja excluir esse produto?", "Excluir Produto", "cancelar"))
+            // Verifica se a Entry do Nome está vazia
+            if (String.IsNullOrEmpty(NomeMaterialEntry.Text))
             {
-                produtoControle.Apagar(produto.Id);
-                Application.Current.MainPage = new EditarProdutosPage();
+                await DisplayAlert("Cadastrar", "O campo Nome é obrigatório", "OK");
+                return false;
             }
+            // Verifica se a Entry do Fornecedor está vazia
+            else if (String.IsNullOrEmpty(NomeFornecedorEntry.Text))
+            {
+                await DisplayAlert("Cadastrar", "O campo Nome do Fornecedor é obrigatório", "OK");
+                return false;
+            }
+            // Verifica se a Entry do Ativo está vazia
+            else if (String.IsNullOrEmpty(AtivoEntry.Text))
+            {
+                await DisplayAlert("Cadastrar", "O campo Ativo é obrigatório", "OK");
+                return false;
+            }
+            else
+                return true;
         }
 
-        private void OnErrorOkButtonClicked(object sender, EventArgs e)
-        {
-            ErrorFrame.IsVisible = false;
-        }
+        //--------------------------------------------------------------------------------------------------
     }
 }
+        

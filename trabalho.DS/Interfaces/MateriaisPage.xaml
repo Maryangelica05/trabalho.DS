@@ -1,93 +1,56 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="trabalho.DS.Materiais"
+             x:Class="trabalho.DS.MateriaisPage"
              BackgroundColor="#B2EDA0">
 
-    <Grid Padding="20">
-        <!-- Definição das linhas e colunas da Grid -->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-
-        <!-- Header com Menu e Título -->
-        <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Center" Orientation="Horizontal" Margin="0,10,0,10">
-            <Label Text="gerenciamento de materiais"
-                   FontSize="Medium"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"/>
-            <Button Text="☰"
-                    x:Name="MenuButton"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Center"
-                    Clicked="OnMenuButtonClicked"/>
-        </StackLayout>
-
-        <!-- Comboboxes (Picker) e Botões de Navegação -->
-        <StackLayout Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="10">
-            <Picker Title="ATIVO:"
-                    x:Name="AtivoPicker"
-                    HorizontalOptions="FillAndExpand"/>
-            <Picker Title="FORNECEDOR:"
-                    x:Name="FornecedorPicker"
-                    HorizontalOptions="FillAndExpand"/>
-        </StackLayout>
-
-        <!-- Lista de Materiais Disponíveis -->
-        <StackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="10">
-            <Label Text="MATERIAIS DISPONÍVEIS:"
-                   FontSize="Medium"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Start"/>
-            <!-- Placeholder para a lista de materiais -->
-            <ListView x:Name="MateriaisListView" HorizontalOptions="FillAndExpand">
-                <!-- Definição de itens para exibição -->
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" Spacing="10">
-                                <Label Text="{Binding Nome}" HorizontalOptions="FillAndExpand"/>
-                               <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                           <Button ImageSource="visualizar.png"
-            Command="{Binding ViewCommand}"
-            HorizontalOptions="Center"
-            WidthRequest="40"
-            HeightRequest="40"/>
-    <Button ImageSource="lixeira.png"
-            Command="{Binding DeleteCommand}"
-            HorizontalOptions="Center"
-          
-            WidthRequest="40"
-            HeightRequest="40"/>
-    <Button ImageSource="editar.png"
-            Command="{Binding EditCommand}"
-            HorizontalOptions="Center"
-            WidthRequest="40"
-            HeightRequest="40"/>
-</StackLayout>
-
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-
-        <!-- Botão de voltar à esquerda -->
-        <Button ImageSource=" voltar.png"
-         Grid.Row="2" Grid.Column="0"
-                x:Name="BackButton"
-                HorizontalOptions="Start"
-                VerticalOptions="End"
-                Clicked="OnBackButtonClicked"/>
-
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         
-    </Grid>
+        <Label Text="MATERIAIS"
+               FontSize="24"
+               FontAttributes="Italic"
+               TextColor="White"
+               HorizontalTextAlignment="Center"
+               Margin="0,20,0,20"/>
+
+        <Button Text="CADASTRO MATERIAIS"
+                BackgroundColor="#8FBC8F"
+                TextColor="Black"
+                FontAttributes="Bold"
+                 Clicked="Oncadastromaterial"
+                Margin="0,10,0,10"
+                WidthRequest="300"
+                HeightRequest="50"/>
+
+        <Button Text="GERENCIAMENTO MATERIAIS"
+                BackgroundColor="#8FBC8F"
+                TextColor="Black"
+                FontAttributes="Bold"
+                 Clicked="Ongerenciamentomaterial"
+                Margin="0,10,0,10"
+                WidthRequest="300"
+                HeightRequest="50"/>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,0">
+          <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+             
+
+            <!-- Botão Voltar -->
+            <ImageButton Source="voltar.png"
+                         HorizontalOptions="Start"
+                         VerticalOptions="End"
+                         Clicked="OnVoltarClicked"
+                         Grid.Column="0" />
+
+          
+        </Grid>
+        </StackLayout>
+
+    </StackLayout>
+
 </ContentPage>
